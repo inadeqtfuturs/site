@@ -101,9 +101,10 @@ const Nav = styled.nav`
 const Toggle = styled.button`
   padding: ${theme.space[2]}px 0;
   position: absolute;
-  top: ${theme.space[4]}px;
-  right: ${theme.space[4]}px;
+  right: ${theme.space[3]}px;
   z-index: ${theme.zIndices[6]};
+  background-color: transparent;
+  border: none;
   svg {
     path {
       fill: ${theme.colors.text};
