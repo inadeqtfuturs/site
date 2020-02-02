@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<header
+  className="css-0"
+>
+  <div
+    className="css-1vomhux"
+    height="100%"
+    width={
+      Array [
+        null,
+        "32rem",
+        "42rem",
+        "52rem",
+        "68rem",
+      ]
+    }
+  >
+    <div
+      className="css-klwo2j"
+    >
+      <p>
+        hello world
+      </p>
+    </div>
+  </div>
+</header>
+`;
