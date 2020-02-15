@@ -11,6 +11,7 @@ const StyledHeader = styled.h1`
     margin-top: 0;
   }
 `;
+
 // placeholder hero
 const StyledImage = styled.img`
   height: 12rem;

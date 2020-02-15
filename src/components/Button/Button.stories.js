@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 import { Button } from '..';
 
 const sizes = ['sm', 'md', 'lg'];
-const colors = ['primary', 'secondary', 'muted'];
+const colors = ['primary', 'muted'];
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -45,6 +45,25 @@ storiesOf('Button', module)
               key={color}
               color={color}
               type="outline"
+              size={size}
+              onClick={action('clicked')}
+            >
+              {color}
+            </Button>
+          ))}
+        </ButtonWrapper>
+      ))}
+    </div>
+  ))
+  .add('link buttons', () => (
+    <div>
+      {sizes.map(size => (
+        <ButtonWrapper key={size}>
+          {colors.map(color => (
+            <Button
+              key={color}
+              color={color}
+              type="ghost"
               size={size}
               onClick={action('clicked')}
             >

@@ -27,7 +27,7 @@ const theme = {
   fontSizes: [8, 12, 14, 16, 20, 24, 36, 48, 80, 96],
   fontWeights: [100, 300, 500, 700, 900],
   borders: [0, '1px solid', '2px solid', '4px solid'],
-  radii: [0, 2, 4, 8, 16, 9999, '100%'],
+  radii: { array: [0, 2, 4, 8, 16, 9999, '100%'], button: 4 },
   colors: {
     text: '#f7f7f7',
     background: '#464452',
@@ -38,7 +38,7 @@ const theme = {
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   hover: [0, 0.2, 0.4, 0.6, 0.8, 1],
-  opacity: [0, 0.1, 0.4, 0.6, 0.8, 1],
+  opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1],
   zIndices: [-666, -300, -100, 0, 100, 300, 666],
   styles: {
     root: {

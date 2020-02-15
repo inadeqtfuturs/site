@@ -30,7 +30,7 @@ const StyledLink = styled(Link)`
   align-items: center;
   color: ${theme.colors.text};
   &:hover {
-    opacity: ${theme.opacity[4]};
+    opacity: ${theme.opacity[3]};
   }
 `;
 

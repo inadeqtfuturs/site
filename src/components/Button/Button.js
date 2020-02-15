@@ -11,7 +11,7 @@ const StyledButton = styled('button')(
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: theme.radii[2]
+    borderRadius: theme.radii.button
   },
   props =>
     variant({
@@ -22,7 +22,15 @@ const StyledButton = styled('button')(
           bg: props.color,
           border: 0,
           '&:hover': {
-            bg: `${tc(theme.colors[props.color]).setAlpha(theme.opacity[4])}`
+            bg: `${tc(theme.colors[props.color]).setAlpha(theme.opacity[7])}`
+          },
+          '&:active': {
+            bg: `${tc(theme.colors[props.color]).setAlpha(theme.opacity[9])}`
+          },
+          '&:focus': {
+            boxShadow: `0 0 0 2px ${theme.colors[props.color]}, 0 0 1px 2px ${
+              theme.colors[props.color]
+            }`
           }
         },
         outline: {
@@ -31,6 +39,28 @@ const StyledButton = styled('button')(
           bg: 'transparent',
           '&:hover': {
             bg: `${tc(theme.colors[props.color]).setAlpha(theme.opacity[1])}`
+          },
+          '&:active': {
+            bg: `${tc(theme.colors[props.color]).setAlpha(theme.opacity[2])}`
+          },
+          '&:focus': {
+            boxShadow: `0 0 0 2px ${theme.colors[props.color]}, 0 0 1px 2px ${
+              theme.colors[props.color]
+            }`
+          }
+        },
+        ghost: {
+          color: props.color,
+          border: `${theme.borders[1]} transparent`,
+          bg: `${tc(theme.colors.background).darken(5)}`,
+          '&:hover': {
+            bg: `${tc(theme.colors.background).darken(10)}`
+          },
+          '&:active': {
+            bg: `${tc(theme.colors.background).darken(15)}`
+          },
+          '&:focus': {
+            border: `${theme.borders[1]} ${theme.colors[props.color]}`
           }
         }
       }
@@ -39,16 +69,16 @@ const StyledButton = styled('button')(
     prop: 'size',
     variants: {
       sm: {
-        px: 1,
+        px: 2,
         py: 1
       },
       md: {
-        px: 2,
+        px: 3,
         py: 2
       },
       lg: {
         px: 4,
-        py: 2
+        py: 3
       }
     }
   })
