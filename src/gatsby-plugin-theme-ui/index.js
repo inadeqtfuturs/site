@@ -61,6 +61,11 @@ const theme = {
   radii: { array: radii, button: 4 },
   opacity: { ...baseOpacity },
   zIndices,
+  forms: {
+    label: {
+      fontFamily: 'heading'
+    }
+  },
   styles: {
     root: {
       h1: {

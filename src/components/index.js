@@ -9,6 +9,7 @@ export { default as SEO } from './SEO/SEO';
 export { default as Branding } from './Branding/Branding';
 export { default as Menu } from './Menu/Menu';
 export { default as Button } from './Button/Button';
+export { default as Input } from './Input/Input';
 
 // page level components
 export { default as Header } from './Header/Header';
