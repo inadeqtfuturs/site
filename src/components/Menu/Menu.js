@@ -6,8 +6,8 @@ import { FaBars, FaChevronDown, FaTimes } from 'react-icons/fa';
 import { theme } from '..';
 
 const Dropdown = styled.ul`
-  padding: ${theme.space[2]}px 0 0;
-  margin: ${theme.space[2]}px 0 0;
+  padding: ${theme.space[2]} 0 0;
+  margin: ${theme.space[2]} 0 0;
   border-top: ${theme.borders[1]} ${theme.colors.text};
   ${theme.mediaQueries.sm} {
     border: none;
@@ -20,7 +20,7 @@ const DropdownIcon = styled(FaChevronDown)`
   display: none;
   ${theme.mediaQueries.sm} {
     display: flex;
-    margin-left: ${theme.space[2]}px;
+    margin-left: ${theme.space[2]};
   }
 `;
 
@@ -30,7 +30,7 @@ const StyledLink = styled(Link)`
   align-items: center;
   color: ${theme.colors.text};
   &:hover {
-    opacity: ${theme.opacity[3]};
+    opacity: 0.6;
   }
 `;
 
@@ -39,17 +39,17 @@ const ListItem = styled.li`
   cursor: pointer;
   font-family: ${theme.fonts.heading};
   font-weight: ${theme.fontWeights[1]};
-  font-size: ${theme.fontSizes[4]}px;
-  padding: ${theme.space[2]}px 0;
+  font-size: ${theme.fontSizes[4]};
+  padding: ${theme.space[2]} 0;
   // targets sub items
   ul li {
     padding: 0;
     margin: 0;
     font-weight: ${theme.fontWeights[1]};
-    font-size: ${theme.fontSizes[4]}px;
+    font-size: ${theme.fontSizes[4]};
   }
   ${theme.mediaQueries.sm} {
-    margin-right: ${theme.space[4]}px;
+    margin-right: ${theme.space[4]};
     display: block;
     transition-duration: 0.32;
     flex-direction: column;
@@ -82,7 +82,7 @@ const Nav = styled.nav`
   transition: transform 0.3s ease-in-out;
   height: 100vh;
   width: 100%;
-  padding: ${theme.space[4]}px;
+  padding: ${theme.space[4]};
   z-index: ${theme.zIndices[6]};
   transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-100%)')};
   ${theme.mediaQueries.sm} {
@@ -99,9 +99,9 @@ const Nav = styled.nav`
 `;
 
 const Toggle = styled.button`
-  padding: ${theme.space[2]}px 0;
+  padding: ${theme.space[2]} 0;
   position: absolute;
-  right: ${theme.space[3]}px;
+  right: ${theme.space[3]};
   z-index: ${theme.zIndices[6]};
   background-color: transparent;
   border: none;

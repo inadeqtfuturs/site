@@ -4,10 +4,10 @@ import { graphql, useStaticQuery } from 'gatsby';
 import { Layout, SEO, theme } from '../components';
 
 const StyledHeader = styled.h1`
-  font-size: ${theme.fontSizes[5]}px;
+  font-size: ${theme.fontSizes[5]};
   margin-top: 2rem;
   ${theme.mediaQueries.md} {
-    font-size: ${theme.fontSizes[6]}px;
+    font-size: ${theme.fontSizes[6]};
     margin-top: 0;
   }
 `;
