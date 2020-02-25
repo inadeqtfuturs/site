@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { variant } from 'styled-system';
 import { Input as ThemeInput, Label as ThemeLabel } from 'theme-ui';
+import { theme } from '..';
 
 const FieldWrapper = styled('div')(
   {
@@ -12,7 +13,7 @@ const FieldWrapper = styled('div')(
     prop: 'row',
     variants: {
       true: {
-        flexDirection: ['column', 'row', 'row', 'row', 'row'],
+        flexDirection: 'row',
         alignItems: 'stretch'
       },
       false: {
@@ -25,6 +26,12 @@ const FieldWrapper = styled('div')(
 const HelpText = styled.small``;
 
 const StyledInput = styled(ThemeInput)(
+  {
+    '&:focus': {
+      boxShadow: `0 0 4px 1px ${theme.colors.primary}`,
+      outline: 'none'
+    }
+  },
   variant({
     prop: 'size',
     variants: {
@@ -61,6 +68,18 @@ const StyledInput = styled(ThemeInput)(
 
 const StyledLabel = styled(ThemeLabel)(
   variant({
+    prop: 'required',
+    variants: {
+      true: {
+        '&::after': {
+          content: '"*"',
+          color: 'accent',
+          ml: '2px'
+        }
+      }
+    }
+  }),
+  variant({
     prop: 'size',
     variants: {
       sm: {
@@ -73,7 +92,8 @@ const StyledLabel = styled(ThemeLabel)(
       },
       lg: {
         fontSize: 3,
-        m: 2
+        m: 2,
+        ml: 1
       }
     }
   }),
@@ -83,7 +103,7 @@ const StyledLabel = styled(ThemeLabel)(
       true: {
         width: 'unset',
         mr: 3,
-        flex: ['unset', '1 0 200px', '1 0 200px', '1 0 200px', '1 0 200px']
+        flex: '1 0 200px'
       },
       false: {
         flexDirection: 'column'

@@ -6,6 +6,7 @@ import {
   borders,
   radii,
   zIndices,
+  shadows,
   getBreakPoints,
   getMediaQueries,
   getContentWidth,
@@ -26,7 +27,7 @@ const colors = {
   secondary: '#4926F6',
   accent: '#3ca251',
   muted: '#307c58'
-}
+};
 const body = 'Georgia';
 const heading = 'Helvetica Neue';
 const monospace = 'Menlo, monospace';
@@ -61,6 +62,7 @@ const theme = {
   radii: { array: radii, button: 4 },
   opacity: { ...baseOpacity },
   zIndices,
+  shadows,
   forms: {
     label: {
       fontFamily: 'heading'

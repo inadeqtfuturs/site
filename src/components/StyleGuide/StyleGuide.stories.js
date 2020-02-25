@@ -2,6 +2,7 @@ import React from 'react';
 import { Styled } from 'theme-ui';
 import { storiesOf } from '@storybook/react';
 import { TypeScale, TypeStyle, ColorPalette } from '@theme-ui/style-guide';
+import { theme } from '..';
 
 storiesOf('Styled Guide', module).add('default', () => (
   <>
@@ -30,5 +31,22 @@ storiesOf('Styled Guide', module).add('default', () => (
     >
       Helvetica Neue
     </TypeStyle>
+    <h3>shadows</h3>
+    <div style={{ display: 'flex', padding: '1rem' }}>
+      {theme.shadows.boxShadows.level.map((shadow, index) => (
+        <div
+          key={shadow}
+          style={{
+            height: '100px',
+            width: '100px',
+            padding: '0.5rem',
+            marginRight: '1rem',
+            boxShadow: `${shadow}`
+          }}
+        >
+          <p>level: {index}</p>
+        </div>
+      ))}
+    </div>
   </>
 ));

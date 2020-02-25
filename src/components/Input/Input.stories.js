@@ -27,6 +27,7 @@ storiesOf('Input', module)
           label={`${size} Label Even Longer`}
           key={size}
           row
+          required
         />
       ))}
     </div>

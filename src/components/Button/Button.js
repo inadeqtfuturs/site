@@ -32,7 +32,7 @@ const StyledButton = styled('button')(
               .toString()}`
           },
           '&:focus': {
-            boxShadow: `0 0 8px 1px ${theme.colors[props.color]}`,
+            boxShadow: `0 0 4px 1px ${theme.colors[props.color]}`,
             outline: 'none'
           }
         },

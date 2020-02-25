@@ -20,5 +20,8 @@ node_modules/
 .cache/
 public
 
+#storybook
+storybook-static
+
 # vscode
 ./vscode
