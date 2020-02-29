@@ -29,7 +29,7 @@ const StyledImage = styled.img`
   filter: invert(97%) sepia(1%) saturate(357%) hue-rotate(158deg)
     brightness(115%) contrast(94%)
     drop-shadow(4px 12px 12px rgba(0, 0, 0, 0.33));
-  ${theme.mediaQueries.sm} {
+  ${theme.mediaQueries.md} {
     height: 20rem;
     width: 20rem;
   }
@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  ${theme.mediaQueries.sm} {
+  ${theme.mediaQueries.md} {
     flex-direction: row;
     justify-content: space-between;
   }

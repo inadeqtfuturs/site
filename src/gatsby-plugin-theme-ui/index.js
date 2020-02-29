@@ -17,8 +17,8 @@ import {
 /**
  * theme variables
  */
-const bp = [40, 50, 62, 80];
-const contentAtBp = [32, 42, 52, 68];
+const bp = [20, 36, 62, 90];
+const contentAtBp = [18, 32, 54, 87.5];
 const baseFontSize = 16;
 const colors = {
   text: '#f7f7f7',
