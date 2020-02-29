@@ -15,7 +15,6 @@ const Dropdown = styled.ul`
   }
 `;
 
-// todo: add react icons
 const DropdownIcon = styled(FaChevronDown)`
   display: none;
   ${theme.mediaQueries.md} {

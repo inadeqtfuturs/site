@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { variant } from 'styled-system';
-import tc from 'tinycolor2';
+import { alpha, darken } from '@theme-ui/color';
 import { theme } from '..';
 
 const StyledButton = styled('button')(
@@ -22,14 +22,10 @@ const StyledButton = styled('button')(
           bg: props.color,
           border: 0,
           '&:hover': {
-            bg: `${tc(theme.colors[props.color])
-              .darken(theme.opacity.hover)
-              .toString()}`
+            bg: darken(theme.colors[props.color], theme.opacity.hover)
           },
           '&:active': {
-            bg: `${tc(theme.colors[props.color])
-              .darken(theme.opacity.selected)
-              .toString()}`
+            bg: darken(theme.colors[props.color], theme.opacity.selected)
           },
           '&:focus': {
             boxShadow: `0 0 4px 1px ${theme.colors[props.color]}`,
@@ -41,10 +37,10 @@ const StyledButton = styled('button')(
           border: `${theme.borders[1]} ${theme.colors[props.color]}`,
           bg: 'transparent',
           '&:hover': {
-            bg: `${tc(theme.colors[props.color]).setAlpha(0.1)}`
+            bg: alpha(theme.colors[props.color], 0.1)
           },
           '&:active': {
-            bg: `${tc(theme.colors[props.color]).setAlpha(0.2)}`
+            bg: alpha(theme.colors[props.color], 0.2)
           },
           '&:focus': {
             boxShadow: `0 0 8px 1px ${theme.colors[props.color]}`,
@@ -54,12 +50,12 @@ const StyledButton = styled('button')(
         ghost: {
           color: props.color,
           border: `${theme.borders[1]} transparent`,
-          bg: `${tc(theme.colors.background).darken(5)}`,
+          bg: darken(theme.colors.background, theme.opacity.hover),
           '&:hover': {
-            bg: `${tc(theme.colors.background).darken(10)}`
+            bg: darken(theme.colors.background, theme.opacity.focused)
           },
           '&:active': {
-            bg: `${tc(theme.colors.background).darken(15)}`
+            bg: darken(theme.colors.background, 0.15)
           },
           '&:focus': {
             border: `${theme.borders[1]} ${theme.colors[props.color]}`,

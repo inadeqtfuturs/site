@@ -24,10 +24,10 @@ export const fontWeights = {
 };
 
 export const baseOpacity = {
-  hover: 4,
-  selected: 8,
-  disabled: 38,
-  focused: 12
+  hover: 0.04,
+  selected: 0.08,
+  disabled: 0.38,
+  focused: 0.12
 };
 
 export const borders = [0, '1px solid', '2px solid', '4px solid'];
