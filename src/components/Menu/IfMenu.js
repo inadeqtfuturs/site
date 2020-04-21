@@ -54,6 +54,8 @@ const Navbar = styled.nav`
 `;
 
 const Toggle = styled.button`
+  border: none;
+  background: transparent;
   svg {
     stroke: ${theme.colors.primary};
   }
