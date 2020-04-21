@@ -29,7 +29,8 @@ function SEO({ description, meta, title, keywords, image, path }) {
   // map and flatten
   const seoKeywords = keywords + site.siteMetadata.keywords;
   const url = site.siteMetadata.siteUrl + path;
-  const fallbackImage = site.siteMetadata.defaultImage;
+  const fallbackImage =
+    site.siteMetadata.siteUrl + site.siteMetadata.defaultImage;
 
   return (
     <Helmet
@@ -67,7 +68,8 @@ SEO.defaultProps = {
   meta: [],
   description: ``,
   path: ``,
-  keywords: []
+  keywords: [],
+  image: null
 };
 
 SEO.propTypes = {
@@ -75,7 +77,8 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
   path: PropTypes.string,
-  keywords: PropTypes.arrayOf(PropTypes.string)
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  image: PropTypes.string
 };
 
 export default SEO;

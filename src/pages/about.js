@@ -63,7 +63,7 @@ function About() {
       <SEO
         title="about"
         description="hi. i'm alex and i make things online."
-        slug="/about"
+        path="/about"
       />
       <Section>
         <Figure>

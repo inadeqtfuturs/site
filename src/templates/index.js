@@ -6,7 +6,11 @@ export function Index({ pageContext }) {
   const { posts, prevPath, nextPath } = pageContext;
   return (
     <Layout>
-      <SEO title="index" />
+      <SEO
+        title="blog"
+        description="hi. i'm alex and here's some stuff i've written about"
+        path="/blog"
+      />
       {posts.map(post => (
         <PostExcerpt post={post} />
       ))}

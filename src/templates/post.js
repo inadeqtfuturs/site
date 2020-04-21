@@ -18,7 +18,7 @@ function PostTemplate({ data }) {
       <SEO
         title={title}
         description={excerpt}
-        slug={slug}
+        path={slug}
         keywords={tags}
         image={image}
       />
