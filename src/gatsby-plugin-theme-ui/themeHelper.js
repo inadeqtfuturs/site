@@ -13,7 +13,8 @@ const spaceArray = [0, 0.25, 0.5, 1, 2, 4, 8];
 export const headingBase = {
   fontFamily: 'heading',
   margin: 0,
-  fontWeight: 400
+  fontWeight: 300,
+  lineHeight: 1.2
 };
 
 export const fontWeights = {
@@ -66,12 +67,20 @@ export function getMediaQueries(bp) {
     sm: `@media screen and (min-width: ${bp[0]}rem)`,
     md: `@media screen and (min-width: ${bp[1]}rem)`,
     lg: `@media screen and (min-width: ${bp[2]}rem)`,
-    xl: `@media screen and (min-width: ${bp[3]}rem)`
+    xl: `@media screen and (min-width: ${bp[3]}rem)`,
+    xxl: `@media screen and (min-width: ${bp[4]}rem)`
   };
 }
 
 export function getContentWidth(bp) {
-  return [null, `${bp[0]}rem`, `${bp[1]}rem`, `${bp[2]}rem`, `${bp[3]}rem`];
+  return [
+    null,
+    `${bp[0]}rem`,
+    `${bp[1]}rem`,
+    `${bp[2]}rem`,
+    `${bp[3]}rem`,
+    `${bp[4]}rem`
+  ];
 }
 
 export function getFontSizes(base) {

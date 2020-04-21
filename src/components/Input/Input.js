@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { variant } from 'styled-system';
 import { Input as ThemeInput, Label as ThemeLabel } from 'theme-ui';
-import { theme } from '..';
+import { theme } from '../..';
 
 const FieldWrapper = styled('div')(
   {

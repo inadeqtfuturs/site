@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { variant } from 'styled-system';
 import { alpha, darken } from '@theme-ui/color';
-import { theme } from '..';
+import { theme } from '../..';
 
 const StyledButton = styled('button')(
   {

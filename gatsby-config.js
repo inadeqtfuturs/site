@@ -1,17 +1,17 @@
 module.exports = {
   siteMetadata: {
-    title: `if // sf`,
-    description: `if-design // speculative fabulation`,
-    author: `if-design`,
-    siteUrl: `https://www.if-designs.com`,
-    keywords: [`keywords`],
+    title: `if`,
+    description: `if-design // portfolio`,
+    author: `alex christie`,
+    siteUrl: `https://www.inadequatefutures.com`,
+    keywords: [`development`, `software engineer`, `alex christie`, `react`],
     social: {
-      twitter: `@twitter_handle`
+      twitter: `@inadeqt_futurs`
     },
     socialLinks: {
-      twitter: `https://twitter.com/twitter_handle`,
-      linkedin: `https://linkedin.com/twitter_handle`,
-      facebook: `https://facebook.com/twitter_handle`
+      twitter: `https://twitter.com/inadeqt_futurs`,
+      linkedin: `https://www.linkedin.com/in/alex-christie-520b7a98/`,
+      facebook: null
     },
     organization: {
       name: `name`,
@@ -19,7 +19,11 @@ module.exports = {
     },
     icon: `src/images/sf.png`,
     defaultImage: `src/images/sf.png`,
-    menu: [{ label: 'home', to: '/' }]
+    menu: [
+      { label: 'blog', to: '/blog' },
+      { label: 'work', to: '/portfolio' },
+      { label: 'about', to: '/about' }
+    ]
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,22 +35,34 @@ module.exports = {
         path: `${__dirname}/src/images`
       }
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: '',
+        path: `${__dirname}/content`
+      }
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        excerpt_separator: `<!--more-->`,
+        plugins: ['gatsby-remark-prismjs']
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `if - sf`,
-        short_name: `sf`,
+        name: `if`,
+        short_name: `if`,
         start_url: `/`,
         background_color: `#333`,
         theme_color: `#333`,
         display: `minimal-ui`,
-        icon: `src/images/sf.png` // This path is relative to the root of the site.
+        icon: `content/images/icon.png` // This path is relative to the root of the site.
       }
-    }
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    },
+    `gatsby-plugin-offline`
   ]
 };

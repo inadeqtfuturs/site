@@ -2,15 +2,17 @@ import React from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
 
-import { ContentWrapper } from '..';
+import { ContentWrapper } from '../..';
 
-const StyledMain = styled.main``;
+const StyledMain = styled.main`
+  flex: 1 0 auto;
+`;
 
 function Main({ children }) {
   return (
-    <StyledMain>
-      <ContentWrapper>{children}</ContentWrapper>
-    </StyledMain>
+    <ContentWrapper>
+      <StyledMain>{children}</StyledMain>
+    </ContentWrapper>
   );
 }
 

@@ -1,14 +1,24 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import PropTypes from 'prop-types';
-import { ContentWrapper } from '..';
+import { ContentWrapper } from '../..';
 
 const StyledFooter = styled.footer``;
+
+const InnerWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+`;
 
 function Footer({ children }) {
   return (
     <StyledFooter>
-      <ContentWrapper>{children}</ContentWrapper>
+      <ContentWrapper>
+        <InnerWrapper>{children}</InnerWrapper>
+      </ContentWrapper>
     </StyledFooter>
   );
 }

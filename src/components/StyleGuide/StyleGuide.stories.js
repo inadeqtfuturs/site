@@ -2,7 +2,7 @@ import React from 'react';
 import { Styled } from 'theme-ui';
 import { storiesOf } from '@storybook/react';
 import { TypeScale, TypeStyle, ColorPalette } from '@theme-ui/style-guide';
-import { theme } from '..';
+import { theme } from '../..';
 
 storiesOf('Styled Guide', module).add('default', () => (
   <>

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { storiesOf } from '@storybook/react';
-import { Footer, theme } from '..';
+import { Footer, theme } from '../..';
 
 const Column = styled.div`
   display: flex;

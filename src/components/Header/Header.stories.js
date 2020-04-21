@@ -1,6 +1,6 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
-import { Header, Menu } from '..';
+import { Header, Menu } from '../..';
 
 const defaultItems = [
   { label: 'home', to: '/' },

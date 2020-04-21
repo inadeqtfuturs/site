@@ -2,7 +2,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { action } from '@storybook/addon-actions';
 import { storiesOf } from '@storybook/react';
-import { Button } from '..';
+import { Button } from '../..';
 
 const sizes = ['sm', 'md', 'lg'];
 const colors = ['primary', 'muted'];

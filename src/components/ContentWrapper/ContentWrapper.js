@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from '@emotion/styled';
 import { layout, space } from 'styled-system';
-import { theme } from '..';
+import { theme } from '../..';
 
 const Wrapper = styled('div')(
   {

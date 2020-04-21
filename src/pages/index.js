@@ -1,70 +1,37 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { graphql, useStaticQuery } from 'gatsby';
-import { Layout, SEO, theme } from '../components';
+import { Layout, SEO, theme } from '..';
 
-const StyledHeader = styled.h1`
-  font-size: ${theme.fontSizes[5]};
-  margin-top: 2rem;
-  ${theme.mediaQueries.md} {
-    font-size: ${theme.fontSizes[6]};
-    margin-top: 0;
-  }
-`;
-
-// placeholder hero
-const StyledImage = styled.img`
-  height: 12rem;
-  width: 12rem;
-  transform-origin: 50% 50%;
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-  animation: spin 120s infinite linear;
-  filter: invert(97%) sepia(1%) saturate(357%) hue-rotate(158deg)
-    brightness(115%) contrast(94%)
-    drop-shadow(4px 12px 12px rgba(0, 0, 0, 0.33));
-  ${theme.mediaQueries.md} {
-    height: 20rem;
-    width: 20rem;
-  }
-`;
-
-const Wrapper = styled.div`
+const Section = styled.section`
   display: flex;
-  flex-direction: column-reverse;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  height: 100%;
-  ${theme.mediaQueries.md} {
-    flex-direction: row;
-    justify-content: space-between;
+  h2 {
+    margin-bottom: ${theme.space[3]};
+    :after {
+      border-bottom: ${theme.borders[1]} ${theme.colors.primary};
+      width: ${theme.space[5]};
+      content: '';
+      height: ${theme.space[3]};
+      display: block;
+    }
   }
 `;
 
 function Index() {
-  const logo = useStaticQuery(
-    graphql`
-      query {
-        path: file(relativePath: { eq: "sf.svg" }) {
-          publicURL
-        }
-      }
-    `
-  );
-
   return (
     <Layout>
       <SEO title="home" />
-      <Wrapper>
-        <StyledHeader>hello.</StyledHeader>
-        <StyledImage src={logo.path.publicURL} />
-      </Wrapper>
+      <div style={{ height: '100%', display: 'flex', flex: '1 0 auto' }}>
+        <Section>
+          <h1>alex christie</h1>
+          <h2>software engineer</h2>
+          <h3>
+            i'm passionate about building elegant, responsive, and speedy
+            software and websites. check out some of my work.
+          </h3>
+        </Section>
+      </div>
     </Layout>
   );
 }

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { FaBars, FaChevronDown, FaTimes } from 'react-icons/fa';
-import { theme } from '..';
+import { theme } from '../..';
 
 const Dropdown = styled.ul`
   padding: ${theme.space[2]} 0 0;
