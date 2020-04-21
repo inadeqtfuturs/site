@@ -24,7 +24,7 @@ function Index() {
       <SEO
         title="home"
         description="hi. i'm alex and i make things online."
-        slug="/"
+        path="/"
       />
       <div style={{ height: '100%', display: 'flex', flex: '1 0 auto' }}>
         <Section>

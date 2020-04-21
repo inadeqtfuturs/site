@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import profile from '../../../content/images/profile.jpg';
+
 function SEO({ description, meta, title, keywords, image, path }) {
   const { site } = useStaticQuery(
     graphql`
@@ -29,8 +31,7 @@ function SEO({ description, meta, title, keywords, image, path }) {
   // map and flatten
   const seoKeywords = keywords + site.siteMetadata.keywords;
   const url = site.siteMetadata.siteUrl + path;
-  const fallbackImage =
-    site.siteMetadata.siteUrl + site.siteMetadata.defaultImage;
+  const fallbackImage = site.siteMetadata.siteUrl + profile;
 
   return (
     <Helmet

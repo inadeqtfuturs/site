@@ -133,7 +133,7 @@ function Portfolio({ data }) {
       <SEO
         title="portfolio"
         description="hi. i'm alex and this is some of the stuff i've made."
-        slug="/portfolio"
+        path="/portfolio"
       />
       <Section>
         <Project>
