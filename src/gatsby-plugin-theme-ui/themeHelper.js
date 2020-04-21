@@ -74,7 +74,7 @@ export function getMediaQueries(bp) {
 
 export function getContentWidth(bp) {
   return [
-    null,
+    'calc(100vw - 2rem)',
     `${bp[0]}rem`,
     `${bp[1]}rem`,
     `${bp[2]}rem`,
