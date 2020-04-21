@@ -60,7 +60,11 @@ const Section = styled.section`
 function About() {
   return (
     <Layout>
-      <SEO title="about" />
+      <SEO
+        title="about"
+        description="hi. i'm alex and i make things online."
+        slug="/about"
+      />
       <Section>
         <Figure>
           <StaticQuery

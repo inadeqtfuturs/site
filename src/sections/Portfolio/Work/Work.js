@@ -106,7 +106,10 @@ function Work({ projects }) {
     <Section>
       <Project>
         <Figure>
-          <Img fluid={currentProject.image.childImageSharp.fluid} />
+          <Img
+            fluid={currentProject.image.childImageSharp.fluid}
+            alt={currentProject.description}
+          />
         </Figure>
         <aside>
           <h2>{currentProject.title}</h2>

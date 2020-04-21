@@ -9,11 +9,19 @@ const Article = styled.article``;
 function PostTemplate({ data }) {
   const {
     html,
-    frontmatter: { author, date, title }
+    excerpt,
+    frontmatter: { author, date, title, image, tags },
+    fields: { slug }
   } = data.markdownRemark;
   return (
     <Layout>
-      <SEO title="page" />
+      <SEO
+        title={title}
+        description={excerpt}
+        slug={slug}
+        keywords={tags}
+        image={image}
+      />
       <Article>
         <h2>{title}</h2>
         <p>
@@ -39,6 +47,7 @@ export const query = graphql`
   ) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      excerpt
       frontmatter {
         title
         author

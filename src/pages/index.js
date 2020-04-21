@@ -21,7 +21,11 @@ const Section = styled.section`
 function Index() {
   return (
     <Layout>
-      <SEO title="home" />
+      <SEO
+        title="home"
+        description="hi. i'm alex and i make things online."
+        slug="/"
+      />
       <div style={{ height: '100%', display: 'flex', flex: '1 0 auto' }}>
         <Section>
           <h1>alex christie</h1>

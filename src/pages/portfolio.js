@@ -130,7 +130,11 @@ function Portfolio({ data }) {
   }
   return (
     <Layout>
-      <SEO title="portfolio" />
+      <SEO
+        title="portfolio"
+        description="hi. i'm alex and this is some of the stuff i've made."
+        slug="/portfolio"
+      />
       <Section>
         <Project>
           <Figure>
