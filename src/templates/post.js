@@ -7,7 +7,6 @@ import { Layout, SEO } from '..';
 const Article = styled.article``;
 
 function PostTemplate({ data }) {
-  console.log('data', data);
   const {
     html,
     frontmatter: { author, date, title }

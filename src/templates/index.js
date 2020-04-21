@@ -4,7 +4,6 @@ import { Layout, PostExcerpt, SEO } from '..';
 
 export function Index({ pageContext }) {
   const { posts, prevPath, nextPath } = pageContext;
-  console.log('{ posts, prevPath, nextPath }', { posts, prevPath, nextPath });
   return (
     <Layout>
       <SEO title="index" />
