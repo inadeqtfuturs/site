@@ -18,7 +18,7 @@ module.exports = {
       url: `github.com`
     },
     icon: `src/images/sf.png`,
-    defaultImage: `src/images/sf.png`,
+    defaultImage: `src/images/profile.jpg`,
     menu: [
       { label: 'blog', to: '/blog' },
       { label: 'work', to: '/portfolio' },

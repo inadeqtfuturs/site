@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
-import { graphql } from 'gatsby';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { darken } from '@theme-ui/color';
 import { Layout, SEO, theme } from '..';
@@ -60,11 +61,17 @@ const NavButton = styled.button`
   }
 `;
 
-const Project = styled.article`
+const Project = styled(motion.article)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  position: absolute;
+  left: 0;
+  right: 0;
+  @media screen and (max-width: 20rem) {
+    top: 0;
+  }
   ${theme.mediaQueries.md} {
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -82,27 +89,40 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  position: relative;
   ${theme.mediaQueries.md} {
     justify-content: center;
   }
   h2 {
-    margin-bottom: ${theme.space[3]};
+    margin-bottom: ${theme.space[2]};
     :after {
       border-bottom: ${theme.borders[1]} ${theme.colors.primary};
       width: ${theme.space[5]};
       content: '';
-      height: ${theme.space[3]};
+      height: ${theme.space[2]};
       display: block;
+    }
+    ${theme.mediaQueries.md} {
+      margin-bottom: ${theme.space[3]};
+      :after {
+        height: ${theme.space[3]};
+      }
     }
   }
   h4 {
-    margin-bottom: ${theme.space[2]};
+    margin-bottom: ${theme.space[1]};
     :after {
       border-bottom: ${theme.borders[1]} ${theme.colors.primary};
       width: ${theme.space[4]};
       content: '';
-      height: ${theme.space[2]};
+      height: ${theme.space[1]};
       display: block;
+    }
+    ${theme.mediaQueries.md} {
+      margin-bottom: ${theme.space[2]};
+      :after {
+        height: ${theme.space[2]};
+      }
     }
   }
 `;
@@ -110,7 +130,28 @@ const Section = styled.section`
 const SliderNav = styled.nav`
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  margin-bottom: 2rem;
+  @media screen and (max-width: 20rem) {
+    margin: 0;
+  }
 `;
+
+const variants = {
+  enter: {
+    opacity: 0
+  },
+  center: {
+    zIndex: 1,
+    opacity: 1
+  },
+  exit: {
+    zIndex: 0,
+    opacity: 0
+  }
+};
 
 function Portfolio({ data }) {
   const [projectIndex, setProjectIndex] = useState(0);
@@ -136,24 +177,32 @@ function Portfolio({ data }) {
         path="/portfolio"
       />
       <Section>
-        <Project>
-          <Figure>
-            <Img fluid={currentProject.image.childImageSharp.fluid} />
-          </Figure>
-          <aside>
-            <h2>{currentProject.title}</h2>
-            <p>{currentProject.description}</p>
-            <h4>tech</h4>
-            <p>{currentProject.tech}</p>
-            <a href={currentProject.link}>live</a>
-            {currentProject.code && (
-              <>
-                <span> // </span>
-                <a href={currentProject.code}>code</a>
-              </>
-            )}
-          </aside>
-        </Project>
+        <AnimatePresence>
+          <Project
+            key={projectIndex}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+          >
+            <Figure>
+              <Img fluid={currentProject.image.childImageSharp.fluid} />
+            </Figure>
+            <aside>
+              <h2>{currentProject.title}</h2>
+              <p>{currentProject.description}</p>
+              <h4>tech</h4>
+              <p>{currentProject.tech}</p>
+              {currentProject.link && <a href={currentProject.link}>live</a>}
+              {currentProject.code && (
+                <>
+                  <span> // </span>
+                  <a href={currentProject.code}>code</a>
+                </>
+              )}
+            </aside>
+          </Project>
+        </AnimatePresence>
         <SliderNav>
           <NavButton type="button" onClick={() => prev()}>
             <FiChevronLeft size={18} />

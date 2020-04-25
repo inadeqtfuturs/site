@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Img from 'gatsby-image';
 import styled from '@emotion/styled';
+import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { darken } from '@theme-ui/color';
 import { theme } from '../../..';
@@ -29,7 +30,7 @@ const NavButton = styled.button`
   }
 `;
 
-const Project = styled.article`
+const Project = styled(motion.article)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -56,6 +57,7 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  position: relative;
   ${theme.mediaQueries.md} {
     justify-content: center;
   }
@@ -86,6 +88,20 @@ const SliderNav = styled.nav`
   justify-content: space-between;
 `;
 
+const variants = {
+  enter: {
+    opacity: 0
+  },
+  center: {
+    zIndex: 1,
+    opacity: 1
+  },
+  exit: {
+    zIndex: 0,
+    opacity: 0
+  }
+};
+
 function Work({ projects }) {
   const [projectIndex, setProjectIndex] = useState(2);
   const projectsArray = projects.allMarkdownRemark.edges;
@@ -104,27 +120,35 @@ function Work({ projects }) {
   }
   return (
     <Section>
-      <Project>
-        <Figure>
-          <Img
-            fluid={currentProject.image.childImageSharp.fluid}
-            alt={currentProject.description}
-          />
-        </Figure>
-        <aside>
-          <h2>{currentProject.title}</h2>
-          <p>{currentProject.description}</p>
-          <h4>tech</h4>
-          <p>{currentProject.tech}</p>
-          {currentProject.link && <a href={currentProject.link}>live</a>}
-          {currentProject.code && (
-            <>
-              <span> // </span>
-              <a href={currentProject.code}>code</a>
-            </>
-          )}
-        </aside>
-      </Project>
+      <AnimatePresence>
+        <motion.article
+          key={projectIndex}
+          variants={variants}
+          initial="enter"
+          animate="center"
+          exit="exit"
+        >
+          <Figure>
+            <Img
+              fluid={currentProject.image.childImageSharp.fluid}
+              alt={currentProject.description}
+            />
+          </Figure>
+          <aside>
+            <h2>{currentProject.title}</h2>
+            <p>{currentProject.description}</p>
+            <h4>tech</h4>
+            <p>{currentProject.tech}</p>
+            {currentProject.link && <a href={currentProject.link}>live</a>}
+            {currentProject.code && (
+              <>
+                <span> // </span>
+                <a href={currentProject.code}>code</a>
+              </>
+            )}
+          </aside>
+        </motion.article>
+      </AnimatePresence>
       <SliderNav>
         <NavButton type="button" onClick={() => prev()}>
           <FiChevronLeft size={18} />
