@@ -17,7 +17,7 @@ const IMAGE_QUERY = graphql`
 `;
 
 const Aside = styled.aside`
-  margin-right: ${theme.space[3]};
+  margin-right: 10%;
   h1 {
     margin-bottom: ${theme.space[3]};
     :after {
@@ -43,6 +43,9 @@ const Aside = styled.aside`
 const Figure = styled.figure`
   width: 100%;
   margin: 0;
+  ${theme.mediaQueries.lg} {
+    width: 60%;
+  }
 `;
 
 const Section = styled.section`
@@ -50,10 +53,11 @@ const Section = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  ${theme.mediaQueries.lg} {
+  ${theme.mediaQueries.md} {
     flex-direction: row-reverse;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
   }
 `;
 

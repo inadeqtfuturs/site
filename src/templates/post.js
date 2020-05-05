@@ -4,7 +4,11 @@ import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
 import { Layout, SEO } from '..';
 
-const Article = styled.article``;
+const Article = styled.article`
+  code {
+    font-size: 0.85em;
+  }
+`;
 
 function PostTemplate({ data }) {
   const {
