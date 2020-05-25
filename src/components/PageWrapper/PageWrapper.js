@@ -6,7 +6,8 @@ import { layout } from 'styled-system';
 const StyledWrapper = styled('div')(
   {
     display: 'grid',
-    gridTemplateRows: 'min-content auto min-content'
+    gridTemplateRows: 'min-content auto min-content',
+    overflow: 'hidden'
   },
   layout
 );

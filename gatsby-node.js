@@ -14,19 +14,31 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 };
 
 const indexPage = path.resolve('./src/templates/index.js');
+const gardenIndex = path.resolve('./src/templates/garden-index.js');
 const blogPost = path.resolve(`./src/templates/post.js`);
+const gardenPost = path.resolve(`./src/templates/garden.js`);
 
-function generatePost(createPage, posts) {
+function generatePost(createPage, component, posts) {
   posts.forEach(({ node, next, previous }) => {
     createPage({
       path: node.fields.slug,
-      component: blogPost,
+      component,
       context: {
         slug: node.fields.slug,
         nextPostPath: previous ? previous.fields.slug : 'none',
         prevPostPath: next ? next.fields.slug : 'none'
       }
     });
+  });
+}
+
+function createGarden(createPage, component, posts) {
+  createPage({
+    path: '/garden',
+    component,
+    context: {
+      posts
+    }
   });
 }
 
@@ -96,10 +108,45 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      garden: allMarkdownRemark(
+        sort: { fields: [frontmatter___date], order: DESC }
+        filter: { frontmatter: { type: { eq: "garden" } } }
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              title
+              author
+              date(formatString: "MMMM DD, YYYY")
+              type
+              tags
+              excerpt
+            }
+            fields {
+              slug
+            }
+            html
+          }
+          previous {
+            fields {
+              slug
+            }
+          }
+          next {
+            fields {
+              slug
+            }
+          }
+        }
+      }
     }
   `).then(result => {
     const posts = result.data.posts.edges;
-    generatePost(createPage, posts);
+    const gardenPosts = result.data.garden.edges;
+    generatePost(createPage, blogPost, posts);
+    generatePost(createPage, gardenPost, gardenPosts);
     createPagination(createPage, posts, '/blog');
+    createGarden(createPage, gardenIndex, gardenPosts);
   });
 };
