@@ -43,6 +43,7 @@ const NavButton = styled.button`
   border: none;
   border: 1px solid ${theme.colors.text};
   padding: ${theme.space[2]} ${theme.space[3]};
+  cursor: pointer;
   &:hover {
     background-color: ${darken(theme.colors.background, theme.opacity.hover)};
   }

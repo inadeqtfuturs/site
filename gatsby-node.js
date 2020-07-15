@@ -78,7 +78,7 @@ exports.createPages = ({ graphql, actions }) => {
     {
       posts: allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { type: { eq: "code" } } }
+        filter: { frontmatter: { type: { eq: "code" }, draft: { eq: false } } }
       ) {
         edges {
           node {
@@ -94,7 +94,7 @@ exports.createPages = ({ graphql, actions }) => {
               slug
             }
             html
-            excerpt(format: PLAIN, pruneLength: 200, truncate: true)
+            excerpt(format: HTML, pruneLength: 200, truncate: true)
           }
           previous {
             fields {
@@ -110,7 +110,9 @@ exports.createPages = ({ graphql, actions }) => {
       }
       garden: allMarkdownRemark(
         sort: { fields: [frontmatter___date], order: DESC }
-        filter: { frontmatter: { type: { eq: "garden" } } }
+        filter: {
+          frontmatter: { type: { eq: "garden" }, draft: { eq: false } }
+        }
       ) {
         edges {
           node {

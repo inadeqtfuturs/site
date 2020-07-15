@@ -1,15 +1,15 @@
 ---
-title: "[00 - blog relaunch]"
-author: "alex christie"
+title: '[00 - blog relaunch]'
+author: 'alex christie'
 date: 2019-01-02T10:59:05-06:00
-type: "code"
+type: 'code'
 image: 
 display: false
 tags: ['coding', 'gatsby', 'javascript', 'frontend']
 draft: false
 ---
 
-My personal website, *inadequate futures*, has been rewritten a total of three times. I was inspired to pick html and css back up after learning about static site generators, specifically [Jekyll](https://jekyllrb.com/), after reading about [Alex Gil's "Ed" theme](https://elotroalex.github.io/ed/about/) for minimal editions (I am in the process of porting this over to Gatsby. More on that at the end of this post). The first version of the site was launched about a year ago on GitHub pages with the help of [Hugo](https://gohugo.io/), which quickly shifted my focus from building *my* website back towards the world of frontend development. Not long after launching "[if-ver01](https://inadeqtfuturs.github.io/)," I started reading about the JAMStack and React, which offered what seemed like a robust alternative for turning markdown files into blog posts.
+My personal website, *inadequate futures*, has been rewritten a total of three times. I was inspired to pick html and css back up after learning about static site generators, specifically [Jekyll](https://jekyllrb.com/), after reading about [Alex Gil's 'Ed' theme](https://elotroalex.github.io/ed/about/) for minimal editions (I am in the process of porting this over to Gatsby. More on that at the end of this post). The first version of the site was launched about a year ago on GitHub pages with the help of [Hugo](https://gohugo.io/), which quickly shifted my focus from building *my* website back towards the world of frontend development. Not long after launching '[if-ver01](https://inadeqtfuturs.github.io/),' I started reading about the JAMStack and React, which offered what seemed like a robust alternative for turning markdown files into blog posts.
 
 <!--more-->
 
@@ -29,7 +29,7 @@ Installation is as easy as running a handful of commands in terminal, but what I
 
 ### GraphQL and the Mesh
 
-Gatsby utilizes [GraphQL](https://graphql.org/) to fetch data. Prior to working with Gatsby, I had never used a query language before. Returning to work on a few WordPress projects over the past six months, I can't quite imagine frontend development *without* GraphQL. Whereas WordPress offers a largely "what you see is what you get" editing experience, GraphQL and Gatsby's frontend are  uncoupled. This means that you can query whatever information you might need from a markdown file, and inject it wherever you want it on the front end.
+Gatsby utilizes [GraphQL](https://graphql.org/) to fetch data. Prior to working with Gatsby, I had never used a query language before. Returning to work on a few WordPress projects over the past six months, I can't quite imagine frontend development *without* GraphQL. Whereas WordPress offers a largely 'what you see is what you get' editing experience, GraphQL and Gatsby's frontend are  uncoupled. This means that you can query whatever information you might need from a markdown file, and inject it wherever you want it on the front end.
 
 As a really simple example, here's a simplified snippet for querying individual blog posts:
 

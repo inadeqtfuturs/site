@@ -1,11 +1,11 @@
 ---
-title: "02 - tangle frontend"
-author: "alex christie"
+title: '02 - tangle frontend'
+author: 'alex christie'
 date: 2020-05-25T15:43:56-6:00
-type: "garden"
-image:
+type: 'garden'
 tags: ['nextjs', 'styled system', 'theme-ui', 'component library', 'monorepo', 'full stack']
 excerpt: 'this post documents setting up the frontend portion of tangle'
+draft: false
 ---
 
 this post documents setting up the frontend portion of tangle.
@@ -28,10 +28,10 @@ Add to package.json:
 
 ``` js
 ...
-  "name": "root",
-  "private": true,
-  "workspaces": [
-    "packages/*"
+  'name': 'root',
+  'private': true,
+  'workspaces': [
+    'packages/*'
   ]
 ...
 ```
@@ -39,10 +39,10 @@ Add to package.json:
 Update lerna.json:
 
 ``` js
-  "packages": ["packages/*"],
-  "version": "independent",
-  "npmClient": "yarn",
-  "useWorkspaces": true
+  'packages': ['packages/*'],
+  'version': 'independent',
+  'npmClient': 'yarn',
+  'useWorkspaces': true
 ```
 
 ### gitignore
@@ -65,7 +65,7 @@ Copy/paste eslint and prettier
 Add to package.json
 
 ``` js
-    "lint": "eslint --fix . && echo 'Lint complete.'",
+    'lint': 'eslint --fix . && echo 'Lint complete.'',
 ```
 
 Commit `[init]`.
@@ -83,7 +83,7 @@ Update name of web app to `@tangle/web`
 
 Add command to root package.json
 
-```"web": "lerna run --scope @tangle/web dev --stream"```
+```'web': 'lerna run --scope @tangle/web dev --stream'```
 
 commit `[web] init`
 
@@ -189,7 +189,7 @@ Add a story for the button
 update root `package.json`
 
 ``` js
-  "stories": "start-storybook"
+  'stories': 'start-storybook'
 ```
 
 Run storybook.
@@ -207,12 +207,12 @@ add a `.babelrc` file
 
 ``` js
   {
-    "plugins": [
-      ["module-resolver", {
-        "root": ["./"],
-        "alias": {
-          "@components": "./packages/components/src",
-          "@web": "./packages/web"
+    'plugins': [
+      ['module-resolver', {
+        'root': ['./'],
+        'alias': {
+          '@components': './packages/components/src',
+          '@web': './packages/web'
         }
       }]
     ]

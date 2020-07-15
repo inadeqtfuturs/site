@@ -10,6 +10,9 @@ const Article = styled.article`
   margin-bottom: ${theme.space[4]};
   padding-bottom: ${theme.space[4]};
   border-bottom: ${theme.borders[1]} ${theme.colors.primary};
+  code {
+    font-size: 0.75em;
+  }
 `;
 const Body = styled.div`
   grid-column: 1/13;
@@ -30,7 +33,6 @@ const Header = styled.div`
   }
   p {
     margin: 0;
-    font-style: italic;
   }
 `;
 const ReadMore = styled.p``;
@@ -56,7 +58,7 @@ function PostExcerpt({ post }) {
       <Body>
         <Excerpt>
           <p dangerouslySetInnerHTML={{ __html: excerpt }} />
-          <StyledLink to={slug}>
+          <StyledLink to={slug} style={{ textDecoration: 'underline' }}>
             <ReadMore>read more...</ReadMore>
           </StyledLink>
           <Tags tags={tags} />

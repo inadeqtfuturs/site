@@ -12,7 +12,7 @@ export function Index({ pageContext }) {
         path="/blog"
       />
       {posts.map(post => (
-        <PostExcerpt post={post} />
+        <PostExcerpt key={post.title} post={post} />
       ))}
     </Layout>
   );

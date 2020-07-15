@@ -1,11 +1,11 @@
 ---
-title: "01 - tangle"
-author: "alex christie"
+title: '01 - tangle'
+author: 'alex christie'
 date: 2020-05-25T15:40:04-6:00
-type: "garden"
-image: 
+type: 'garden'
 tags: ['nextjs', 'styled system', 'theme-ui', 'component library', 'monorepo', 'full stack']
 excerpt: 'This is the first in a series of posts documenting tangle, a fullstack monorepo'
+draft: false
 ---
 
 This is the first in a series of posts documenting tangle, a fullstack monorepo that utilizes next.js and styled-system on the front end, with a graphql backend. The purpose of these posts is to, on the one hand, document the technical foundations of the repo and, on the other, act as an opening for thinking about the project more generally. Towards this end, I've split this post into two sections -- technical and theoretical.

@@ -6,17 +6,26 @@ import { Layout, SEO } from '..';
 
 const Article = styled.article`
   code {
-    font-size: 0.85em;
+    font-size: 0.75em;
+  }
+  pre[class*='language-'] {
+    margin: 0 0 1rem;
+    border-radius: 4px;
   }
 `;
 
 function PostTemplate({ data }) {
   const {
-    html,
-    excerpt,
-    frontmatter: { author, date, title, image, tags },
-    fields: { slug }
-  } = data.markdownRemark;
+    markdownRemark: {
+      html,
+      excerpt,
+      frontmatter: { date, title, image, tags },
+      fields: { slug }
+    },
+    nextPost,
+    prevPost
+  } = data;
+
   return (
     <Layout>
       <SEO
@@ -28,9 +37,7 @@ function PostTemplate({ data }) {
       />
       <Article>
         <h2>{title}</h2>
-        <p>
-          {date} by {author}
-        </p>
+        <p>{date}</p>
         <p dangerouslySetInnerHTML={{ __html: html }} />
       </Article>
     </Layout>

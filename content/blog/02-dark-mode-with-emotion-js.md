@@ -1,11 +1,11 @@
 ---
-title: "[02 - adding dark mode to your gatsby site with emotion js]"
-author: "alex christie"
+title: '[02 - adding dark mode to your gatsby site with emotion js]'
+author: 'alex christie'
 date: 2019-03-23T13:00:00-6:00
-type: "code"
+type: 'code'
 image: 
 display: false
-tags: ["gatsby", "coding", "react", "themes", "dark mode"]
+tags: ['gatsby', 'coding', 'react', 'themes', 'dark mode']
 draft: false
 ---
 In finalizing the current version of my [portfolio](/portfolio), I wanted to offer a dark mode toggle as a proof of concept, practice working with [emotion.js](https://emotion.sh/docs/introduction), and just for usability because my blog and portfolio are so light. To implement this, I utilize a toggle component to control state, `emotion.js`'s `<Global />` styles to inject some styles at `:root`, and browser supported variables to change everything from font color to backgrounds to link colors.

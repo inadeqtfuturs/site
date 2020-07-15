@@ -27,7 +27,7 @@ const baseFontSize = 16;
 const colors = {
   text: '#333',
   background: '#fcfcfc',
-  primary: '#666',
+  primary: '#555',
   secondary: '#4926F6',
   accent: '#3ca251',
   muted: '#307c58'
@@ -82,12 +82,12 @@ const theme = {
       h2: {
         ...headingBase,
         fontSize: [4, 4, 4, 5],
-        marginBottom: 2
+        marginBottom: 3
       },
       h3: {
         ...headingBase,
         fontSize: [3, 3, 3, 4],
-        marginBottom: 2
+        marginBottom: 3
       },
       h4: {
         ...headingBase,
@@ -110,6 +110,8 @@ const theme = {
         marginBottom: 3
       },
       a: {
+        fontSize: [2, 2, 2, 3],
+        lineHeight: 1.5,
         color: 'primary',
         '&:hover': {
           color: darken(colors.text, baseOpacity.hover)

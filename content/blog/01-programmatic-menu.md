@@ -1,12 +1,12 @@
 ---
-title: "[01 - programmatic menus in Gatsby]"
-author: "alex christie"
+title: '[01 - programmatic menus in Gatsby]'
+author: 'alex christie'
 date: 2019-01-20T12:49:34-6:00
-type: "code"
+type: 'code'
 image: 
 display: false
-tags: ["gatsby", "coding", "react", "menu", "navigation"]
-draft: true
+tags: ['gatsby', 'coding', 'react', 'menu', 'navigation']
+draft: false
 ---
 Programmatically generating menus is a difficult concept at first because it seems simple enough just to hard code your menu into a component. However, making a reusable and data agnostic menu component is really easy and can travel with you from project to project. Here, I want to outline two approaches to generating menus from your data. The first involves defining menu items in markdown frontmatter, which can be useful when designing sites for folks less familiar with javascript or coding more generally. The second is an iteration on the current Gatsby documentation that skips using GraphQL fragments in favor of a meta config file.
 
@@ -32,12 +32,12 @@ With these things in mind, let's take a look at some example frontmatter:
 
 ``` markdown
 ---
-title: "hi."
-author: "ed."
+title: 'hi.'
+author: 'ed.'
 date: 2018-12-29T10:52:33-6:00
-type: "page"
+type: 'page'
 menuItem: 1
-menuTitle: "home"
+menuTitle: 'home'
 draft: true
 ---
 ```
@@ -95,7 +95,7 @@ export default (props) => (
 )
 ```
 
-StaticQuery is doing the majority of the heavy lifting here. We're filtering all of our markdown files for anything that's listed as a "page," and then ordering them by `frontmatter.menuItem`. Any page that doesn't define a menuItem in its frontmatter is excluded from the search. This query also exposes the `menuTitle` and `slug`, so all that's left to do is map our object into Link. What we're left with is a set of easily styled list items nester in `nav` tag.
+StaticQuery is doing the majority of the heavy lifting here. We're filtering all of our markdown files for anything that's listed as a 'page,' and then ordering them by `frontmatter.menuItem`. Any page that doesn't define a menuItem in its frontmatter is excluded from the search. This query also exposes the `menuTitle` and `slug`, so all that's left to do is map our object into Link. What we're left with is a set of easily styled list items nester in `nav` tag.
 
 If you're looking for a simple way to generate single level menus, this is a really great way to go. But what if you're looking for something a little more robust, specifically with nested sub-menus?
 
@@ -168,9 +168,9 @@ export default MenuItem;
 
 So, what's happening here?
 
-- We're deconstructing the item so we can use "label", "to", and check for subItems.
-- We then use a [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to differentiate arrays that do and do not have "subItems".
-- If one does, we map the "label" and "to" properties to a list item and Link tag, respectively. We also add an "angle-down" icon to signify that the link has a dropdown menu.
+- We're deconstructing the item so we can use 'label', 'to', and check for subItems.
+- We then use a [ternary operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to differentiate arrays that do and do not have 'subItems'.
+- If one does, we map the 'label' and 'to' properties to a list item and Link tag, respectively. We also add an 'angle-down' icon to signify that the link has a dropdown menu.
 - Then, we map the subItems in similar fashion, iterating over the subItem object.
 - The second half of the ternary just gives us a standard Link nested in a list item.
 

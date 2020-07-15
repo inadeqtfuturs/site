@@ -33,11 +33,17 @@ const Menu = styled(motion.ul)`
   padding: 0;
   list-style: none;
   flex-direction: column;
+  li:first-child {
+    margin-top: 1rem;
+  }
   ${theme.mediaQueries.sm} {
     display: flex !important;
     height: auto !important;
     flex-direction: row;
     flex-basis: unset;
+    li:first-child {
+      margin-top: 0;
+    }
     li:last-child {
       margin-right: 0;
     }
