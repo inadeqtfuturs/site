@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
-import { Layout, SEO } from '..';
+import { Layout, PostPagination, SEO } from '..';
 
 const Article = styled.article`
   code {
@@ -16,11 +16,16 @@ const Article = styled.article`
 
 function GardenTemplate({ data }) {
   const {
-    html,
-    excerpt,
-    frontmatter: { date, title, image, tags },
-    fields: { slug }
-  } = data.markdownRemark;
+    markdownRemark: {
+      html,
+      excerpt,
+      frontmatter: { date, title, image, tags },
+      fields: { slug }
+    },
+    nextPost,
+    prevPost
+  } = data;
+
   return (
     <Layout>
       <SEO
@@ -35,6 +40,7 @@ function GardenTemplate({ data }) {
         <p>{date}</p>
         <p dangerouslySetInnerHTML={{ __html: html }} />
       </Article>
+      <PostPagination prev={prevPost} next={nextPost} />
     </Layout>
   );
 }

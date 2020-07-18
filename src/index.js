@@ -13,6 +13,7 @@ export { default as Button } from './components/Button/Button';
 export { default as Input } from './components/Input/Input';
 export { default as Tags } from './components/Tags/Tags';
 export { default as PostExcerpt } from './components/PostExcerpt/PostExcerpt';
+export { default as PostPagination } from './components/PostPagination/PostPagination';
 
 // page level components
 export { default as Header } from './components/Header/Header';

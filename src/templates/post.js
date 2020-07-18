@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 import styled from '@emotion/styled';
-import { Layout, SEO } from '..';
+import { Layout, PostPagination, SEO } from '..';
 
 const Article = styled.article`
   code {
@@ -40,6 +40,7 @@ function PostTemplate({ data }) {
         <p>{date}</p>
         <p dangerouslySetInnerHTML={{ __html: html }} />
       </Article>
+      <PostPagination prev={prevPost} next={nextPost} />
     </Layout>
   );
 }
