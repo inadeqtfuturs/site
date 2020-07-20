@@ -31,8 +31,8 @@ function Index() {
           <h1>alex christie</h1>
           <h2>software engineer</h2>
           <h3>
-            i'm passionate about building elegant, responsive, and speedy
-            software and websites. check out some of my work.
+            i'm build elegant, responsive, and speedy software and websites.
+            check out some of my work.
           </h3>
         </Section>
       </div>
