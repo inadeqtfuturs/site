@@ -91,7 +91,8 @@ function About() {
             <h3>frameworks and tools</h3>
             <p>
               react, react-native, vue, redux, graphql, express, axios, styled
-              components, emotion.js, ruby on rails, next.js, gatsby
+              components, emotion.js, ruby on rails, next.js, gatsby, semiotic,
+              d3
             </p>
           </section>
         </Aside>
