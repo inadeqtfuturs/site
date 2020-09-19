@@ -21,6 +21,7 @@ module.exports = {
     defaultImage: `src/images/profile.jpg`,
     menu: [
       { label: 'blog', to: '/blog' },
+      { label: 'garden', to: '/garden' },
       { label: 'work', to: '/portfolio' },
       { label: 'about', to: '/about' }
     ]

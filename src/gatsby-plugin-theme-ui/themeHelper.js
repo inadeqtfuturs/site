@@ -58,28 +58,28 @@ export function convertToRem(number) {
 }
 
 export function getBreakPoints(bp) {
-  return bp.map(p => `${p}rem`);
+  return bp.map(p => `${p}px`);
 }
 
 export function getMediaQueries(bp) {
   return {
-    xs: `@media screen and (max-width: ${bp[0]}rem)`,
-    sm: `@media screen and (min-width: ${bp[0]}rem)`,
-    md: `@media screen and (min-width: ${bp[1]}rem)`,
-    lg: `@media screen and (min-width: ${bp[2]}rem)`,
-    xl: `@media screen and (min-width: ${bp[3]}rem)`,
-    xxl: `@media screen and (min-width: ${bp[4]}rem)`
+    xs: `@media screen and (max-width: ${bp[0]}px)`,
+    sm: `@media screen and (min-width: ${bp[0]}px)`,
+    md: `@media screen and (min-width: ${bp[1]}px)`,
+    lg: `@media screen and (min-width: ${bp[2]}px)`,
+    xl: `@media screen and (min-width: ${bp[3]}px)`,
+    xxl: `@media screen and (min-width: ${bp[4]}px)`
   };
 }
 
 export function getContentWidth(bp) {
   return [
-    'calc(100vw - 2rem)',
-    `${bp[0]}rem`,
-    `${bp[1]}rem`,
-    `${bp[2]}rem`,
-    `${bp[3]}rem`,
-    `${bp[4]}rem`
+    null,
+    `${bp[0]}px`,
+    `${bp[1]}px`,
+    `${bp[2]}px`,
+    `${bp[3]}px`,
+    `${bp[4]}px`
   ];
 }
 
