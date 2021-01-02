@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { Link } from 'gatsby';
 import { Layout, SEO, theme } from '..';
 
 const Section = styled.section`
@@ -15,6 +16,9 @@ const Section = styled.section`
       height: ${theme.space[3]};
       display: block;
     }
+  }
+  a {
+    font-size: unset;
   }
 `;
 
@@ -32,7 +36,7 @@ function Index() {
           <h2>software engineer</h2>
           <h3>
             i build elegant, responsive, and speedy software and websites. check
-            out some of my work.
+            out <Link to="/work">some of my work</Link>.
           </h3>
         </Section>
       </div>

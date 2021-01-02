@@ -1,10 +1,11 @@
 import React from 'react';
-import { FaRegEnvelope } from 'react-icons/fa';
 
 function ContactLink() {
   return (
-    <a href="mailto:alexj.christie@gmail.com">
-      <FaRegEnvelope size={20} />
+    <a href="https://digital-garden.dev/" style={{ textDecoration: 'none' }}>
+      <span role="img" aria-label="seedling">
+        🌱
+      </span>
     </a>
   );
 }

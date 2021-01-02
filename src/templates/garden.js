@@ -12,6 +12,10 @@ const Article = styled.article`
     margin: 0 0 1rem;
     border-radius: 4px;
   }
+  .gatsby-highlight {
+    display: grid;
+    overflow: scroll;
+  }
 `;
 
 function GardenTemplate({ data }) {
