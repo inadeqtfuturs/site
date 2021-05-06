@@ -35,8 +35,13 @@ function Index() {
           <h1>alex christie</h1>
           <h2>software engineer</h2>
           <h3>
-            i build elegant, responsive, and speedy software and websites. check
-            out <Link to="/work">some of my work</Link>.
+            i build elegant, responsive, and speedy software and websites at{' '}
+            <a href="https://graveflex.com">graveflex</a>. i'm currently working
+            on <a href="https://github.com/inadeqtfuturs/if-sf">if-sf</a>, a
+            theme generator and component library, and building out{' '}
+            <a href="https://digital-garden.dev">digital-garden.dev</a>. you can
+            find some of my previous work in my{' '}
+            <Link to="/portfolio">portfolio</Link>.
           </h3>
         </Section>
       </div>
